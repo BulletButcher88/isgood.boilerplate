@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './homepage.component.style.scss'
 
 class HomePage extends React.Component {

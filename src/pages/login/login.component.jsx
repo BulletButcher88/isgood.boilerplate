@@ -7,7 +7,7 @@ class LogIn  extends React.Component {
   render() {
     return (
       <div>
-        PLACE LOGIN FORM OR SIGN UP BUTTON HERE
+        This is the page we build a login or sign up form for
       </div>
     )
   }
