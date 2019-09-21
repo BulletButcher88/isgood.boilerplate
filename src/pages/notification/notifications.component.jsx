@@ -6,9 +6,9 @@ class Notifications  extends React.Component {
 
   render() {
     return (
-      <div>
-        Disply clients notifications
-      </div>
+      <h3>
+        CLIENTS LASTEST UPDATES DISPLAY
+      </h3>
     )
   }
 }

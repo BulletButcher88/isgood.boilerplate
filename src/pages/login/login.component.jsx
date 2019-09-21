@@ -6,9 +6,9 @@ class LogIn  extends React.Component {
 
   render() {
     return (
-      <div>
-        This is the page we build a login or sign up form for
-      </div>
+      <h3>
+        LOGIN BUTTON / SIGN UP PAGE
+      </h3>
     )
   }
 }

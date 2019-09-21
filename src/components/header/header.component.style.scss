@@ -4,25 +4,24 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
-  background-color: rgb(249, 211, 207);
+  background-color:white;
 
   .logo-container {
     height: 100%;
-    width: 100px;
-    padding: 25px;
+    width: 120px;
+    padding: 0;
   }
 
   .logo{
-    height: 50%;
-    width: 50px;
-    margin: 0;
+    height: 100%;
+    width: 100%;
   }
   .options{
-    width: 50%;
+    width: 30%;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
   }
   .option {
     padding: 10px 15px;

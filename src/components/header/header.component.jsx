@@ -1,24 +1,68 @@
 import React from 'react';
 import { Link } from 'react-router-dom' ;
+import { ReactComponent as Logo } from '../../asset/isgood.svg';
 
-import { ReactComponent as Logo } from '../../asset/is good.svg'
-import './header.components.style.scss'
+import { SearchBar } from '../searchbar/search-bar.component';
 
-const Header = () => (
+import './header.component.style.scss'
 
-  <div className='header'>
-    <Link className='logo-container' to='/'>
-      <Logo className='logo'/>
-    </Link>
-    <div className='options'>
-      <Link className='option' to='/login'>
-        LOGIN
-      </Link>
-      <Link className='option' to='/notifications'>
-        ALERTS
-      </Link>
-    </div>
-  </div>
-)
+class Header extends React.Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      data: [],
+      searchFeild: ''
+    }
+  }
+
+    // mount account user API and select project or data end points to disply.
+    componentDidMount() {
+      fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(users => this.setState({ data: users }))
+    }
+  
+    handleChange = (e) => {
+      this.setState({ searchFeild: e.target.value})
+    }
+
+render() {
+
+      // function to handle search bar input to be letter sensitive, to what renders in CardList
+      const { data, searchFeild } = this.state;
+      const filteredData = data.filter(data => 
+        data.name.toLowerCase().includes(searchFeild.toLowerCase()))
+
+  return (
+      <div className='header'>
+
+        <Link className='logo-container' to='/'>
+          <Logo className='logo'/>
+        </Link>
+          
+           <SearchBar 
+             type="search"
+             placeholder="search data"
+             handleChange={this.handleChange}
+            />
+
+        <div className='options'>
+         <Link className='option' to='/messages'>
+            MESSAGE
+          </Link>
+          <Link className='option' to='/notifications'>
+            ALERTS
+          </Link>
+          <Link className='option' to='/login'>
+            LOGIN
+          </Link>
+        </div>
+      </div>
+
+    )
+  }
+}
 
 export default Header;

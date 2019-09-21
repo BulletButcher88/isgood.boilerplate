@@ -4,9 +4,9 @@ import './homepage.component.style.scss'
 class HomePage extends React.Component {
   render() {
     return (
-      <div>
+      <h3>
         HOMEPAGE
-      </div>
+      </h3>
     )
   }
 }
