@@ -44,7 +44,8 @@ render() {
           
            <SearchBar 
              type="search"
-             placeholder="search data"
+             placeholder="search..."
+             style={{color: '#939292'}}
              handleChange={this.handleChange}
             />
 

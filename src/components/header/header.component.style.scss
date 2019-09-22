@@ -3,19 +3,24 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
-  background-color:white;
+  background-color:#fefbfb;
 
   .logo-container {
     height: 100%;
     width: 120px;
     padding: 0;
   }
-
   .logo{
     height: 100%;
     width: 100%;
   }
+  .search {
+    font-size: 1.1rem;
+  }
+  input.search::placeholder {
+    color: rgb(159, 157, 157);
+  }
+
   .options{
     width: 30%;
     height: 100%;
