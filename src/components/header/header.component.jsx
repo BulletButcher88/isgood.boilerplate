@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom' ;
-import { ReactComponent as Logo } from '../../asset/isgood.svg';
+import { ReactComponent as Logo } from '../../asset/Frame.svg';
 
 import { SearchBar } from '../searchbar/search-bar.component';
 

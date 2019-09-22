@@ -9,14 +9,14 @@ class SideBar extends React.Component {
     return (
       <div className="side-bar">
           <div className='side-options'>
-         <Link className='side-option' to='/dashboard'>
-            DASHBOARD
+          <Link className='side-option' to='/dashboard'>
+            D
           </Link>
           <Link className='side-option' to='/projects'>
-            PROJECTS
+            P
           </Link>
           <Link className='side-option' to='/data'>
-            DATA 
+            D
           </Link>
         </div>
       </div>
