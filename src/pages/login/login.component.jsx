@@ -6,7 +6,7 @@ class LogIn  extends React.Component {
 
   render() {
     return (
-      <h3>
+      <h3 className='login'>
         LOGIN BUTTON / SIGN UP PAGE
       </h3>
     )

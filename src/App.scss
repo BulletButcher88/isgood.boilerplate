@@ -1,9 +1,10 @@
 body {
   font-family: 'Open Sans Condensed', sans-serif;
   padding: 20px 60px;
-  background-color: rgb(220, 220, 220);
+  background-color: #333437;
   margin: 0;
   padding: 0;
+
 }
 
 a {
@@ -11,6 +12,8 @@ a {
   color: black;
 }
 
-.dashboard {
-  float: right;
+
+h3 {
+  color: white;
+  display: flex;
 }

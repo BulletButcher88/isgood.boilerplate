@@ -6,7 +6,7 @@ class Notifications  extends React.Component {
 
   render() {
     return (
-      <h3>
+      <h3 className='notifications'>
         CLIENTS LASTEST UPDATES DISPLAY
       </h3>
     )
