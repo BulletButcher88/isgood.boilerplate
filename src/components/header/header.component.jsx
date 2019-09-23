@@ -19,9 +19,9 @@ class Header extends React.Component {
     }
   }
 
-    // mount account user API and select project or data end points to disply.
+    // mount API and to show dashboard, search-bar select, and side-bar page withprops
     componentDidMount() {
-      fetch('https://jsonplaceholder.typicode.com/users')
+      fetch('https://isgood.ai.com/users')
       .then(response => response.json())
       .then(users => this.setState({ data: users }))
     }
@@ -53,13 +53,13 @@ render() {
 
         <div className='options'>
          <Link className='option' to='/messages'>
-           <FontAwesomeIcon icon={faComments} />
+            <FontAwesomeIcon icon={faComments} />
           </Link>
           <Link className='option' to='/notifications'>
-          <FontAwesomeIcon icon={faBell} />
+            <FontAwesomeIcon icon={faBell} />
           </Link>
           <Link className='option' to='/login'>
-          <FontAwesomeIcon icon={faUser} />
+            <FontAwesomeIcon icon={faUser} />
           </Link>
         </div>
       </div>
