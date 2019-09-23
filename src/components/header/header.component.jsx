@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom' ;
 import { ReactComponent as Logo } from '../../asset/Frame.svg';
-
 import { SearchBar } from '../searchbar/search-bar.component';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBell, faComments, faUser } from "@fortawesome/free-solid-svg-icons";
+
 
 import './header.component.style.scss'
 
@@ -51,13 +53,13 @@ render() {
 
         <div className='options'>
          <Link className='option' to='/messages'>
-            MESSAGE
+           <FontAwesomeIcon icon={faComments} />
           </Link>
           <Link className='option' to='/notifications'>
-            ALERTS
+          <FontAwesomeIcon icon={faBell} />
           </Link>
           <Link className='option' to='/login'>
-            LOGIN
+          <FontAwesomeIcon icon={faUser} />
           </Link>
         </div>
       </div>
