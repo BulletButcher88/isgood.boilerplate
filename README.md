@@ -8,7 +8,7 @@ This project is a basic desktop application for testing isgood.ai application. I
   
   
   
-## GET STARTED
+### Getting Started
 
 Clone or download the repository and run
 ### `npm install`
