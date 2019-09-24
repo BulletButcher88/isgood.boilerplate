@@ -58,7 +58,7 @@ render() {
           <Link className='option' to='/notifications'>
             <FontAwesomeIcon icon={faBell} />
           </Link>
-          <Link className='option' to='/login'>
+          <Link className='option' to='/sign-in-and-sign-up'>
             <FontAwesomeIcon icon={faUser} />
           </Link>
         </div>

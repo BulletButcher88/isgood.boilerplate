@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom' ;
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiagnoses, faCheckSquare, faChartBar } from "@fortawesome/free-solid-svg-icons";
 
+
 import './side-bar.component.style.scss'
 
 class SideBar extends React.Component {
@@ -18,7 +19,7 @@ class SideBar extends React.Component {
           <Link className='side-option' to='/projects'>
           <FontAwesomeIcon icon={faCheckSquare} />
           </Link>
-          <Link className='side-option' to='/data'>
+          <Link className='side-option' to='/data-page'>
             <FontAwesomeIcon icon={faChartBar} />
           </Link>
         </div>
