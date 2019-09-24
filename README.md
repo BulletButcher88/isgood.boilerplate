@@ -1,4 +1,5 @@
-## isgood.ai Boilerplate Testing App
+## isgood.ai 
+### Boilerplate Testing App
 
 This project is a basic desktop application for testing isgood.ai application. It is to have:
   - sign in and create user account'
