@@ -32,7 +32,7 @@ class Header extends React.Component {
 
 render() {
 
-      // function to handle search bar input to be letter sensitive, to what renders in CardList
+      // function that will handle search bar input to be letter sensitive, to renders in cards.... make a CardList component for this
       const { data, searchFeild } = this.state;
       const filteredData = data.filter(data => 
         data.name.toLowerCase().includes(searchFeild.toLowerCase()))

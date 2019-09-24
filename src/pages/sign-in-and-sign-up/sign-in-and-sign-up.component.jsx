@@ -6,7 +6,6 @@ import './sign-in-and-sign-up.component.style.scss'
 
 class SignInAndSignUp  extends React.Component {
 
-
   render() {
     return (
       <h3 className='sign-in-and-sign-up'>
