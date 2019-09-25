@@ -12,36 +12,43 @@ import './header.component.style.scss'
 
 class Header extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       data: [],
-      searchFeild: ''
+
     }
   }
 
-    // mount API and to show dashboard, search-bar select, and side-bar page withprops
-    componentDidMount() {
-      fetch('https://isgood.ai.com/users')
-      .then(response => response.json())
-      .then(users => this.setState({ data: users }))
-    }
+    // mount API that handles isgood clients data, settings, etc.
+    // Below is search-bar selector that searches the API for relivant information. 
+
+    // componentDidMount() {
+    //   fetch('https://isgood.ai.com/users')
+    //   .then(response => response.json())
+    //   .then(users => this.setState({ data: users }))
+    // }
   
-    handleChange = (e) => {
-      this.setState({ searchFeild: e.target.value})
-    }
+    // handleChange = (e) => {
+    //   this.setState({ searchFeild: e.target.value})
+    // }
 
 render() {
 
       // function that will handle search bar input to be letter sensitive, to renders in cards.... make a CardList component for this
-      const { data, searchFeild, currentUser } = this.state;
-      const filteredData = data.filter(data => 
-        data.name.toLowerCase().includes(searchFeild.toLowerCase()))
+      // const { data, searchFeild } = this.state;
+      // const filteredData = data.filter(data => 
+      //   data.name.toLowerCase().includes(searchFeild.toLowerCase()))
+
+
+      // firebase props for google sign in
+      const { currentUser } = this.props;
+      console.log(currentUser)
+
 
   return (
       <div className='header'>
-
         <Link className='logo-container' to='/'>
           <Logo className='logo'/>
         </Link>
