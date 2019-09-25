@@ -12,10 +12,35 @@ import Dashboard from './pages/dashboard/dashboard.component'
 import Projects from './pages/projects/projects.components'
 import DataPage from './pages/data-page/data.page.componet'
 
-function App() {
-  return (
+// firebase auth makes our App component a class to handle currentUser
+import { auth } from './firebase/firebase.utils'
+
+
+class App extends React.Component {
+  constructor() {
+    super() 
+    this.state = {
+      currentUser: null
+    }
+  }
+
+  // firebase default setState for currentUser
+  unsubscribeFromAuth = null
+
+  componentDidMount() {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged( user => { 
+      this.setState({ currentUser: user })
+    });
+  }
+
+  componentWillUnmount() {
+    this.unsubscribeFromAuth()
+  }
+
+  render() {
+    return (
       <div>
-        <Header/>
+        <Header currentUser={this.state.currentUser}/>
         <SideBar/>
             <Switch >
               <Route exact path='/' component={ HomePage } />
@@ -29,6 +54,7 @@ function App() {
             </Switch>
       </div>
   )
+  }
 }
 
 export default App;

@@ -5,6 +5,8 @@ import { SearchBar } from '../searchbar/search-bar.component';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faComments, faUser } from "@fortawesome/free-solid-svg-icons";
 
+import { auth } from '../../firebase/firebase.utils'
+
 
 import './header.component.style.scss'
 
@@ -33,7 +35,7 @@ class Header extends React.Component {
 render() {
 
       // function that will handle search bar input to be letter sensitive, to renders in cards.... make a CardList component for this
-      const { data, searchFeild } = this.state;
+      const { data, searchFeild, currentUser } = this.state;
       const filteredData = data.filter(data => 
         data.name.toLowerCase().includes(searchFeild.toLowerCase()))
 
@@ -58,12 +60,18 @@ render() {
           <Link className='option' to='/notifications'>
             <FontAwesomeIcon icon={faBell} />
           </Link>
+          
           <Link className='option' to='/sign-in-and-sign-up'>
             <FontAwesomeIcon icon={faUser} />
           </Link>
+          {
+          currentUser ?
+          <div className='option' onClick={() => auth.signOut()}>SIGN OUT</div>
+          :
+          <Link className='option' to='/sign-in-and-sign-up'>SIGN IN</Link>
+           }
         </div>
       </div>
-
     )
   }
 }
