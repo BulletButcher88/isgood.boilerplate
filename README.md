@@ -1,7 +1,8 @@
 ## isgood.ai 
 ### Boilerplate Testing App
 
-<img src="./src/asset/images/25.9.2019-dashboard.screenshot.mark.butcher.png">
+<img src="./src/asset/images/signin.isgood.png">
+<img src="./src/asset/images/google.isgood.png">
 
 
 This project is a basic desktop application for testing isgood.ai application. It is to include:
