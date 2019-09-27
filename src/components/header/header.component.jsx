@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom' ;
+import { Link, Redirect } from 'react-router-dom' ;
 import { ReactComponent as Logo } from '../../asset/Frame.svg';
 import { SearchBar } from '../searchbar/search-bar.component';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -46,7 +46,6 @@ render() {
       const { currentUser } = this.props;
       console.log(currentUser)
 
-
   return (
       <div className='header'>
         <Link className='logo-container' to='/'>
@@ -64,18 +63,21 @@ render() {
          <Link className='option' to='/messages'>
             <FontAwesomeIcon icon={faComments} />
           </Link>
+
           <Link className='option' to='/notifications'>
             <FontAwesomeIcon icon={faBell} />
           </Link>
-          
+
+          {
+           currentUser ?
+            <Link className='option' onClick={() => auth.signOut()}>
+              SIGN OUT
+              <Redirect to="/" />
+            </Link>
+          :
           <Link className='option' to='/sign-in-and-sign-up'>
             <FontAwesomeIcon icon={faUser} />
           </Link>
-          {
-          currentUser ?
-          <div className='option' onClick={() => auth.signOut()}>SIGN OUT</div>
-          :
-          <Link className='option' to='/sign-in-and-sign-up'>SIGN IN</Link>
            }
         </div>
       </div>
