@@ -3,16 +3,42 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-  apiKey: "AIzaSyATefatcs3T7BlkpoGmtqxOCE4F4BgiR3w",
-  authDomain: "crwn-db-6fd51.firebaseapp.com",
-  databaseURL: "https://crwn-db-6fd51.firebaseio.com",
-  projectId: "crwn-db-6fd51",
-  storageBucket: "",
-  messagingSenderId: "1089320036298",
-  appId: "1:1089320036298:web:9b5926488538512999d133"
+  apiKey: "AIzaSyCuvQeGUsqTbG3QGbUnSG8D02-1RTMuZys",
+  authDomain: "isgood-test.firebaseapp.com",
+  databaseURL: "https://isgood-test.firebaseio.com",
+  projectId: "isgood-test",
+  storageBucket: "isgood-test.appspot.com",
+  messagingSenderId: "873884236672",
+  appId: "1:873884236672:web:84d1de7b14be8dec0f1f65",
+  measurementId: "G-XXLG1S91M1"
 };
 
 firebase.initializeApp(config);
+
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+  if(!userAuth) return;
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const snapShot = await userRef.get();
+
+  if(!snapShot.exists) {
+    const { displayName, email, providerData } = userAuth;
+    const createAt = new Data();
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        providerData,
+        createAt,
+        ...additionalData
+      });
+    }
+      catch (error) {
+        console.error('error when creating user', error.message);
+      }
+    }
+    return userRef;
+  }
+
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();

@@ -4,7 +4,8 @@
 
 This project is a basic desktop application for testing for a startup. It is to include:
   - sign in and create user account
-  - basic layout of pages and  components, ready for API and users database
+  - firebase database and google sign-in
+  - basic layout of pages and components, ready for API and users database
   - SCSS, CSS to fit given UI design
   - function with search bar 
 
