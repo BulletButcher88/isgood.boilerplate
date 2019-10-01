@@ -6,13 +6,15 @@ This project is a basic desktop application for testing for a startup. It is to 
   - sign in and create user account
   - basic layout of pages and  components, ready for API and users database
   - SCSS, CSS to fit given UI design
+  - function with search bar 
 
 
 
 ### Sign in and create account page
 
-<img src="./src/asset/images/sign-in.png">
+<img src="./src/asset/images/sign-in.png">  
   
+<img src="./src/asset/images/wirefframe.png"> 
   
   
 ### To Get Started
