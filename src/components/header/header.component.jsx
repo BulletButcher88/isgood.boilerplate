@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom' ;
-import { ReactComponent as Logo } from '../../asset/Frame.svg';
+import { ReactComponent as Logo } from '../../asset/Component.svg';
 import { SearchBar } from '../searchbar/search-bar.component';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell, faComments, faUser } from "@fortawesome/free-solid-svg-icons";
@@ -44,7 +44,6 @@ render() {
 
       // firebase props for google sign in
       const { currentUser } = this.props;
-      console.log(currentUser)
 
   return (
       <div className='header'>
@@ -72,7 +71,7 @@ render() {
            currentUser ?
             <Link className='option' onClick={() => auth.signOut()}>
               SIGN OUT
-              <Redirect to="/" />
+              <Redirect to="/"/>
             </Link>
           :
           <Link className='option' to='/sign-in-and-sign-up'>

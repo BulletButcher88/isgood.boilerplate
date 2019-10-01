@@ -8,17 +8,18 @@ class HomePage extends React.Component {
 
     this.state = {
       data: [],
-
     }
   }
 
 
   render() {
 
+    const { currentUser } = this.props;
+    console.log(currentUser)
 
     return (
       <h3 className='homepage'>
-       
+        homepage
       </h3>
     )
   }
