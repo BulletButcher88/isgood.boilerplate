@@ -5,15 +5,15 @@ import './App.scss';
 import Header from './components/header/header.component';
 import SideBar from './components/side-bar/side-bar.component'
 import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
-import Messages from './pages/messages/messages.component'
+import Messages from './pages/messages/messages.component';
 import HomePage from './pages/homepage/homepage.component';
-import Notifications from './pages/notification/notifications.component'
-import Dashboard from './pages/dashboard/dashboard.component'
-import Projects from './pages/projects/projects.components'
-import DataPage from './pages/data-page/data.page.componet'
+import Notifications from './pages/notification/notifications.component';
+import Dashboard from './pages/dashboard/dashboard.component';
+import Projects from './pages/projects/projects.components';
+import DataPage from './pages/data-page/data.page.componet';
 
 // firebase auth makes our App component a class to handle currentUser
-import { auth, createUserProfileDocument } from './firebase/firebase.utils'
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 
 class App extends React.Component {
@@ -30,18 +30,17 @@ class App extends React.Component {
   componentDidMount() {
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if(userAuth) {
+
         const userRef = await createUserProfileDocument(userAuth);
         
-        userRef.onSnapshot(snapShot => {
+         userRef.onSnapshot(snapShot => {
           this.setState( {
             currentUser: {
               id: snapShot.id,
               ...snapShot.data()
             }
-          }, () => {
-            console.log(this.state)
-          }
-          );
+          });
+          console.log(this.state)
         });
       }
       this.setState({ currentUser: userAuth });
@@ -53,8 +52,6 @@ class App extends React.Component {
   }
 
   render() {
-
-
     return (
       <div>
         <Header currentUser={this.state.currentUser}/>
@@ -74,7 +71,7 @@ class App extends React.Component {
 
             </Switch>
       </div>
-  )
+    )
   }
 }
 
