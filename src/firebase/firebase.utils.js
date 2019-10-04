@@ -3,14 +3,14 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-  apiKey: "AIzaSyCuvQeGUsqTbG3QGbUnSG8D02-1RTMuZys",
-  authDomain: "isgood-test.firebaseapp.com",
-  databaseURL: "https://isgood-test.firebaseio.com",
-  projectId: "isgood-test",
-  storageBucket: "isgood-test.appspot.com",
-  messagingSenderId: "873884236672",
-  appId: "1:873884236672:web:84d1de7b14be8dec0f1f65",
-  measurementId: "G-XXLG1S91M1"
+  apiKey: "AIzaSyDxxQOuuQP_0TMi6wFmRwrdVlWnYCHPgQM",
+  authDomain: "dashboard-14f14.firebaseapp.com",
+  databaseURL: "https://dashboard-14f14.firebaseio.com",
+  projectId: "dashboard-14f14",
+  storageBucket: "",
+  messagingSenderId: "454539108833",
+  appId: "1:454539108833:web:14d3f09f7a7d53cc2f72a0",
+  measurementId: "G-C76Z06MVVL"
 };
 
 firebase.initializeApp(config);

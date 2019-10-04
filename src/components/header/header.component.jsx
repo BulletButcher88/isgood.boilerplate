@@ -17,6 +17,7 @@ class Header extends React.Component {
 
     this.state = {
       data: [],
+      currentUser: ''
 
     }
   }
