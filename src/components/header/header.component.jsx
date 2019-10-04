@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom' ;
 import { ReactComponent as Logo } from '../../asset/Component.svg';
 import { SearchBar } from '../searchbar/search-bar.component';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell, faComments, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBell, faComments } from "@fortawesome/free-solid-svg-icons";
 
 import { auth } from '../../firebase/firebase.utils'
 
@@ -18,22 +18,27 @@ class Header extends React.Component {
     this.state = {
       data: [],
       currentUser: ''
-
     }
   }
 
     // mount API that handles isgood clients data, settings, etc.
     // Below is search-bar selector that searches the API for relivant information. 
 
-    // componentDidMount() {
-    //   fetch('https://isgood.ai.com/users')
-    //   .then(response => response.json())
-    //   .then(users => this.setState({ data: users }))
-    // }
+    componentDidMount() {
+
+      // this.setState({
+      //   currentUser: this.props
+      // })
+
+      // fetch('https://isgood.ai.com/users')
+      // .then(response => response.json())
+      // .then(users => this.setState({ data: users }))
+    }
   
     // handleChange = (e) => {
     //   this.setState({ searchFeild: e.target.value})
     // }
+
 
 render() {
 
@@ -44,7 +49,8 @@ render() {
 
 
       // firebase props for google sign in
-      const { currentUser } = this.props;
+
+      const { currentUser }  = this.props;
 
   return (
       <div className='header'>
@@ -59,27 +65,29 @@ render() {
              handleChange={this.handleChange}
             />
 
-        <div className='options'>
-         <Link className='option' to='/messages'>
-            <FontAwesomeIcon icon={faComments} />
-          </Link>
 
-          <Link className='option' to='/notifications'>
-            <FontAwesomeIcon icon={faBell} />
-          </Link>
 
           {
            currentUser ?
-            <Link className='option' onClick={() => auth.signOut()}>
-              SIGN OUT
-              <Redirect to="/"/>
-            </Link>
+            <div className='options'>
+              <Link className='option' to='/messages'>
+                <FontAwesomeIcon icon={faComments} />
+              </Link>
+              <Link className='option' to='/notifications'>
+                <FontAwesomeIcon icon={faBell} />
+              </Link>
+              <Link className='login' onClick={() => auth.signOut()}>
+                SIGN OUT
+                <Redirect to="/"/>
+              </Link>
+            </div>
           :
-          <Link className='option' to='/sign-in-and-sign-up'>
-            <FontAwesomeIcon icon={faUser} />
-          </Link>
+            <div className='options'>
+              <Link className='option' to='/sign-in-and-sign-up'>
+                SIGN IN
+              </Link>
+            </div>
            }
-        </div>
       </div>
     )
   }
