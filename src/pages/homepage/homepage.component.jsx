@@ -8,17 +8,27 @@ class HomePage extends React.Component {
 
     this.state = {
       data: [],
+      currentUser: ''
       
     }
   }
 
-
+  componentDidMount() {
+    const { currentUser }  = this.props;
+    this.setState({
+      currentUser: currentUser
+    })
+  
+  }
 
 
   render() {
+    console.log(this.state.currentUser)
+
     return (
       <h3 className='homepage'>
-        homepage
+        
+        homepage {this.state.currentUser}
       </h3>
     )
   }

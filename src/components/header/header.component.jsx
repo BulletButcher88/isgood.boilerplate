@@ -47,9 +47,6 @@ render() {
       // const filteredData = data.filter(data => 
       //   data.name.toLowerCase().includes(searchFeild.toLowerCase()))
 
-
-      // firebase props for google sign in
-
       const { currentUser }  = this.props;
 
   return (
@@ -64,12 +61,12 @@ render() {
              style={{color: '#939292'}}
              handleChange={this.handleChange}
             />
-
-
-
           {
            currentUser ?
             <div className='options'>
+
+              <div>Hi, {currentUser.displayName.split(' ')[0]}</div>
+
               <Link className='option' to='/messages'>
                 <FontAwesomeIcon icon={faComments} />
               </Link>

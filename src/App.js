@@ -52,9 +52,10 @@ class App extends React.Component {
   }
 
   render() {
+    const {currentUser} = this.state
     return (
       <div>
-        <Header currentUser={this.state.currentUser}/>
+        <Header currentUser={currentUser}/>
         <SideBar/>
             <Switch >
               <Route 
